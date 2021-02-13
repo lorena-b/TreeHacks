@@ -13,7 +13,7 @@ app = Flask(__name__, template_folder='../client')
 def index():
     """Index Route
     """
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 @app.route('/', methods=['POST'])
