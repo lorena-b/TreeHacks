@@ -6,7 +6,7 @@ import auth
 
 reddit = auth.reddit
 
-keyword = ('Trump')
+keyword = 'Trump'
 
 thisdict = {
     "stocks": ["wallstreetbets", "stocks", "investing", "all", "news", "robinhood"],
