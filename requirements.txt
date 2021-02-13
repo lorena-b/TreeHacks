@@ -4,4 +4,4 @@ requests
 praw
 pandas
 nltk
-guinicorn
+gunicorn
