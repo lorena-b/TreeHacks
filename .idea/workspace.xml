@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fe1cc5-9f96-4769-8384-db8e371f689f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TreeHacks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TreeHacks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/basis.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/basis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,9 +81,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.sentiment" />
         <item itemvalue="Python.basis" />
-        <item itemvalue="Python.app" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
