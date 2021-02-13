@@ -4,7 +4,7 @@ Flask API
 from flask import Flask, jsonify, request, render_template
 import sentiment
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../client')
 
 
 @app.route('/')
