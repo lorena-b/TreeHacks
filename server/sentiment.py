@@ -15,7 +15,7 @@ reddit = auth.reddit
 GATHER_LIMIT = 50  # max amount of posts to gather
 
 
-def get_posts(topic: str) -> dict[int, dict]:
+def get_posts(topic: str):
     """Return the hot <GATHER_LIMIT> posts associated with an input topic
 
     :return: dictionary with keys as the post number and then the value is a dictionary
@@ -40,7 +40,7 @@ def get_posts(topic: str) -> dict[int, dict]:
     return posts
 
 
-def comments_to_str(submission) -> list[str]:
+def comments_to_str(submission):
     """Extract the comment body from comment list
 
     :return: str
@@ -87,7 +87,7 @@ def get_post_sentiment(comments) -> tuple:
     return results, post_score
 
 
-def get_topic_sentiment(topic: str) -> list[dict]:
+def get_topic_sentiment(topic: str):
     """
     Get the overall sentiment for a topic EX: This topic is POSITIVE
     :return: report
@@ -128,7 +128,7 @@ def get_topic_sentiment(topic: str) -> list[dict]:
     return sent_report
 
 
-def sentiment_report(topic: str) -> any:
+def sentiment_report(topic: str):
     """Return the SENTIMENT REPORT for the whole topic (this will be called
     by the API)
     """
