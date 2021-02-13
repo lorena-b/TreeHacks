@@ -1,12 +1,14 @@
+"""
+Analyze trends
+"""
 import datetime
 from datetime import date
 import auth
 
-# print(f"{value:%Y-%m-%d %H:%M:%S}")
-
 reddit = auth.reddit
 
 keyword = 'Trump'
+GATHER_LIMIT = 50
 
 thisdict = {
     "stocks": ["wallstreetbets", "stocks", "investing", "all", "news", "robinhood"],
@@ -26,7 +28,7 @@ day = (int(f"{today:%d}"))
 
 def monthf(keyword, subreddit, valuedic):
     subreddit = reddit.subreddit(subreddit)
-    hot_python = subreddit.top('month', limit=100)
+    hot_python = subreddit.top('month', limit=GATHER_LIMIT)
     for submission in hot_python:
         timestamp = submission.created_utc
         value = datetime.datetime.fromtimestamp(timestamp)
@@ -35,9 +37,7 @@ def monthf(keyword, subreddit, valuedic):
         if keyword in submission.title:
             if postmonth == month:
                 valuedic[30 - (day - postday)] += 1
-                print("hey")
             else:
-                print(postday)
                 if ((postmonth == 1) or (postmonth == 3) or (postmonth == 5) or
                         (postmonth == 7) or (postmonth == 8) or
                         (postmonth == 9) or (postmonth == 10) or (postmonth == 12)):
@@ -53,6 +53,3 @@ def montharray(keyword, topic, valuedic):
     for i in (thisdict[topic]):
         valuedic = monthf(keyword, i, valuedic)
     return valuedic
-
-
-print(montharray(keyword, "news", valuedicmonth))

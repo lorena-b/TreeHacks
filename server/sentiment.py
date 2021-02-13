@@ -17,6 +17,7 @@ GATHER_LIMIT = 50  # max amount of posts to gather
 
 def get_posts(topic: str) -> dict[int, dict]:
     """Return the hot <GATHER_LIMIT> posts associated with an input topic
+
     :return: dictionary with keys as the post number and then the value is a dictionary
     containing the post information
     """
@@ -132,8 +133,7 @@ def sentiment_report(topic: str) -> any:
     by the API)
     """
     sent_report = {
-        f'SENTIMENT FOR TOPIC: {topic}':
-            get_topic_sentiment(topic)
+        topic: get_topic_sentiment(topic)
     }
 
     return sent_report
