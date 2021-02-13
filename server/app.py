@@ -6,7 +6,7 @@ import sentiment
 import basis
 from basis import valuedicmonth
 
-app = Flask(__name__, template_folder='../client')
+app = Flask(__name__, template_folder='../client/static')
 
 
 @app.route('/')
