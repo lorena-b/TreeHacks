@@ -10,7 +10,7 @@ CLIENT_SECRET = os.environ.get('REDDIT_SECRET')
 USERNAME = os.environ.get('user')
 PASSWORD = os.environ.get('pass')
 
-auth = praw.Reddit(client_id=CLIENT_ID,
+reddit = praw.Reddit(client_id=CLIENT_ID,
                    client_secret=CLIENT_SECRET,
                    username=USERNAME,
                    password=PASSWORD,
