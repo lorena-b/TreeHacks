@@ -26,7 +26,8 @@ def get_posts(topic: str) -> dict[int, dict]:
 
     count = 0
     for post in all_reddit.search(topic, sort='hot', limit=GATHER_LIMIT):
-        if not post.stickied and post.comments is not None:
+        comments = comments_to_str(post)
+        if not post.stickied and len(comments) > 0:
             posts[count] = {
                 'name': post.title,
                 'subreddit': post.subreddit,
