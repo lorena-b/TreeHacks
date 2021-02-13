@@ -14,12 +14,13 @@ reddit = praw.Reddit(client_id=CLIENT_ID,
                    client_secret=CLIENT_SECRET,
                    username=USERNAME,
                    password=PASSWORD,
-                   user_agent='hackathon')
+                   user_agent='hackathon',
+                   redirect_uri='http://localhost:8080')
 print(reddit.auth.url(["identity"], "...", "permanent"))
 
 subreddit = reddit.subreddit("python")
 
 hot_python = subreddit.hot(limit=5)
 
-for item in hot_python:
-    print(item)
+for submission in hot_python:
+    print(submission.title)
