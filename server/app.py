@@ -8,20 +8,21 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index() -> object:
+def index():
     """Index Route
     """
     return render_template('index.html')
 
 
-@app.route('/sentiment', methods=['GET'])
-def get_sent_data() -> object:
+@app.route('/', methods=['POST'])
+def get_sent_data():
     """Route for sentiment
 
     Needs to receive input from front-end "stock topic"
     """
-    sentiment_data = sentiment.sentiment_manager()
-    return jsonify({'test': 'random test json'})
+    topic = request.form['text']
+    sentiment_data = sentiment.sentiment_manager(topic)
+    return jsonify(sentiment_data)
 
 
 if __name__ == '__main__':

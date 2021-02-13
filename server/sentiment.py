@@ -3,7 +3,13 @@ SENTIMENT FUNCTIONS
 """
 import auth
 from praw.models import MoreComments
+import pandas as pd
 import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
+from pprint import pprint
+
+nltk.download('vader_lexicon')
+sia = SIA()
 
 # INSTANCES AND CONSTANTS
 reddit = auth.reddit
@@ -43,13 +49,13 @@ def get_posts(topic: str) -> dict[int, dict]:
     count = 0
     for post in all_reddit.search(topic, sort='hot', limit=GATHER_LIMIT):
         if not post.stickied and post.comments is not None:
-            count += 1
             posts[count] = {
                 'name': post.title,
                 'subreddit': post.subreddit,
                 'text': post.selftext,
                 'comments': comments_to_str(post)
             }
+            count += 1
 
     return posts
 
@@ -71,18 +77,26 @@ def comments_to_str(submission) -> list[str]:
 def get_sentiment(comments) -> any:
     """Return sentiment for a POST (based on comments)
     """
-    return 0
+    results = []
+    for line in comments:
+        pol_score = sia.polarity_scores(line)
+        pol_score['comment'] = line
+        results.append(pol_score)
+
+    return results
 
 
 def sentiment_manager(topic: str) -> any:
-    """Return the AVERAGE sentiment for the whole topic (this will be called
+    """Return the SENTIMENT REPORT for the whole topic (this will be called
     by the API)
     """
     # average sentiment is the sum of all post sentiment / gather limit
-    average_sent = 0
+    sent_report = {}
+    test = []
     posts = get_posts(topic=topic)
     for i in range(len(posts)):
         post_sent = get_sentiment(posts[i]['comments'])
+        test.append(post_sent)
 
-    return average_sent
+    return test
 
