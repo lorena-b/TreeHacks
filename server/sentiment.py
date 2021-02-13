@@ -117,9 +117,9 @@ def get_topic_sentiment(topic: str) -> list[dict]:
         sent = 'NEUTRAL'
 
     sent_report.append({
-        'TOPIC POS': topic_pos,
-        'TOPIC NEG': topic_neg,
-        'TOPIC NEU': topic_neu,
+        'TOPIC POS': "{:.2%}".format(topic_pos),
+        'TOPIC NEG': "{:.2%}".format(topic_neg),
+        'TOPIC NEU': "{:.2%}".format(topic_neu),
         'SENTIMENT': sent,
         'VOLATILITY': (topic_pos + topic_neg) - topic_neu
     })
