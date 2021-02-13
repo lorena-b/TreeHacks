@@ -21,7 +21,7 @@ def get_sent_data():
     Needs to receive input from front-end "stock topic"
     """
     topic = request.form['text']
-    sentiment_data = sentiment.sentiment_manager(topic)
+    sentiment_data = sentiment.sentiment_report(topic)
     return jsonify(sentiment_data)
 
 
