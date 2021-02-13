@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder='../client/static')
 
 
 @app.route('/')
-def home():
+def index():
     """Index Route
     """
     return render_template('home.html')
