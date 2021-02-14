@@ -32,19 +32,9 @@ def get_sent_data():
         res.append(sentiment_data)
         res.append(trend_data)
 
-        return render_template('base.html', data=res)
+        return render_template('base.html', data=res, topic=topic)
 
     return render_template('index.html')
-
-
-@app.route('/data')
-def display_data():
-    """
-    Display returned data on a new page
-    """
-    topic = request.args.get('topic', None)
-
-    return 0
 
 
 if __name__ == '__main__':

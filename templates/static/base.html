@@ -13,10 +13,18 @@
 
 <div class="center">
     <h1>
-        Reddit Analysis
+        Reddit Analysis for topic: {{ topic }}
     </h1>
 
-    Returned data: {{ data }}
+    <pre>
+        Returned data: {{ data }}
+        Positive Score: {{ data[0][topic][0]['TOPIC POS'] }}
+        Negative Score: {{ data[0][topic][0]['TOPIC NEG'] }}
+        Neutral Score: {{ data[0][topic][0]['TOPIC NEU'] }}
+        Sentiment: {{ data[0][topic][0]['SENTIMENT'] }}
+        Volatility: {{ data[0][topic][0]['VOLATILITY'] }}
+    </pre>
+
 
 </div>
 
