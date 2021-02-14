@@ -24,7 +24,7 @@ def get_sent_data():
     Needs to receive input from front-end "ex: stock topic"
     """
     if request.method == 'POST':
-        topic = request.form['text']
+        topic = request.form.get('text')
 
         res = []
         sentiment_data = sentiment.sentiment_report(topic)
@@ -32,7 +32,8 @@ def get_sent_data():
         res.append(sentiment_data)
         res.append(trend_data)
 
-        return redirect(url_for('data', data=res))
+        return render_template('base.html', data=res)
+
     return render_template('index.html')
 
 
@@ -41,9 +42,9 @@ def display_data():
     """
     Display returned data on a new page
     """
-    data = request.args.get('data', None)
+    topic = request.args.get('topic', None)
 
-    return render_template('base.html', data=data)
+    return 0
 
 
 if __name__ == '__main__':
