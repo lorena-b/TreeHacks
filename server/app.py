@@ -7,7 +7,7 @@ import basis
 from basis import valuedicmonth
 from flask_bootstrap import Bootstrap
 
-app = Flask(__name__, template_folder='../client')
+app = Flask(__name__, template_folder='../static')
 Bootstrap(app)
 
 
@@ -15,7 +15,7 @@ Bootstrap(app)
 def index():
     """Index Route
     """
-    return render_template('test.html')
+    return render_template('index.html')
 
 
 @app.route('/', methods=['POST'])
