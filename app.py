@@ -2,13 +2,13 @@
 Flask API
 """
 from flask import Flask, jsonify, request, render_template
-import sentiment
-import basis
-from basis import valuedicmonth
+from services import sentiment
+from services import basis
 
-app = Flask(__name__, template_folder='../client/static')
+app = Flask(__name__, template_folder='./templates/static')
 
-
+valuedicmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                 0, 0, 0]
 @app.route('/')
 def index():
     """Index Route
