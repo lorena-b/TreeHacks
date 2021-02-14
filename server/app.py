@@ -27,7 +27,7 @@ def get_sent_data():
     topic = request.form['text']
     res = []
     sentiment_data = sentiment.sentiment_report(topic)
-    trend_data = basis.montharray(topic, 'news', valuedicmonth)
+    trend_data = basis.montharray(topic, 'stocks', valuedicmonth)
     res.append(sentiment_data)
     res.append(trend_data)
     return jsonify(res)
