@@ -1,7 +1,7 @@
 """
 SENTIMENT FUNCTIONS
 """
-from server import auth
+import auth
 from praw.models import MoreComments
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
