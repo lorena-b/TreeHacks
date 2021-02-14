@@ -4,18 +4,8 @@ Flask API
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 import sentiment
 import basis
-from flask_bootstrap import Bootstrap
 
 app = Flask(__name__, template_folder='../templates/static', static_folder='../templates/static')
-Bootstrap(app)
-
-
-@app.route('/')
-def index():
-    """Index Route
-    """
-    return render_template('index.html')
-
 
 @app.route('/', methods=['GET', 'POST'])
 def get_sent_data():
