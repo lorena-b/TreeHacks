@@ -8,7 +8,7 @@ from server import auth
 reddit = auth.reddit
 
 keyword = 'Trump'
-GATHER_LIMIT = 50
+GATHER_LIMIT = 5
 
 thisdict = {
     "stocks": ["wallstreetbets", "stocks", "investing", "all", "news", "robinhood"],

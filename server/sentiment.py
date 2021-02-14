@@ -12,7 +12,7 @@ sia = SIA()
 
 # INSTANCES AND CONSTANTS
 reddit = auth.reddit
-GATHER_LIMIT = 50  # max amount of posts to gather
+GATHER_LIMIT = 5  # max amount of posts to gather
 
 
 def get_posts(topic: str):
