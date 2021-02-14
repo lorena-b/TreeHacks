@@ -6,7 +6,7 @@ import sentiment
 import basis
 from flask_bootstrap import Bootstrap
 
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 Bootstrap(app)
 
 
