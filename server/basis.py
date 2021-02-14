@@ -3,7 +3,7 @@ Analyze trends
 """
 import datetime
 from datetime import date
-from services import auth
+from server import auth
 
 reddit = auth.reddit
 

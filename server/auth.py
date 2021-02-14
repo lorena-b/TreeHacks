@@ -19,4 +19,3 @@ reddit = praw.Reddit(client_id=CLIENT_ID,
                      password=PASSWORD,
                      user_agent='hackathon',
                      redirect_uri='http://localhost:8080')
-# print(reddit.auth.url(["identity"], "...", "permanent"))
