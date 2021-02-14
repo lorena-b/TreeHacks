@@ -5,15 +5,17 @@ from flask import Flask, jsonify, request, render_template
 import sentiment
 import basis
 from basis import valuedicmonth
+from flask_bootstrap import Bootstrap
 
-app = Flask(__name__, template_folder='../client/static')
+app = Flask(__name__, template_folder='../client')
+Bootstrap(app)
 
 
 @app.route('/')
 def index():
     """Index Route
     """
-    return render_template('home.html')
+    return render_template('test.html')
 
 
 @app.route('/', methods=['POST'])
