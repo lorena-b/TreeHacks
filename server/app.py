@@ -15,7 +15,7 @@ Bootstrap(app)
 def index():
     """Index Route
     """
-    return render_template('index.html')
+    return render_template('base.html')
 
 
 @app.route('/', methods=['POST'])
