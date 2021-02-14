@@ -1,7 +1,7 @@
-flask
-python-dotenv
+flask-bootstrap
+python-dotenv~=0.15.0
 requests
-praw
-pandas
-nltk
-gunicorn
+praw~=7.1.5.dev0
+nltk~=3.5
+
+Flask~=1.1.2
