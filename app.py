@@ -2,18 +2,19 @@
 Flask API
 """
 from flask import Flask, jsonify, request, render_template
-from services import sentiment
-from services import basis
+import sentiment
+import basis
+from flask_bootstrap import Bootstrap
 
-app = Flask(__name__, template_folder='./templates/static')
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
+Bootstrap(app)
 
-valuedicmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                 0, 0, 0]
+
 @app.route('/')
 def index():
     """Index Route
     """
-    return render_template('home.html')
+    return render_template('base.html')
 
 
 @app.route('/', methods=['POST'])
@@ -25,7 +26,7 @@ def get_sent_data():
     topic = request.form['text']
     res = []
     sentiment_data = sentiment.sentiment_report(topic)
-    trend_data = basis.montharray(topic, 'news', valuedicmonth)
+    trend_data = basis.montharray(topic, 'stocks', basis.valuedicmonth)
     res.append(sentiment_data)
     res.append(trend_data)
     return jsonify(res)
