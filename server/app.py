@@ -4,10 +4,9 @@ Flask API
 from flask import Flask, jsonify, request, render_template
 import sentiment
 import basis
-from basis import valuedicmonth
 from flask_bootstrap import Bootstrap
 
-app = Flask(__name__, template_folder='../static')
+app = Flask(__name__, template_folder='../templates')
 Bootstrap(app)
 
 
@@ -27,7 +26,7 @@ def get_sent_data():
     topic = request.form['text']
     res = []
     sentiment_data = sentiment.sentiment_report(topic)
-    trend_data = basis.montharray(topic, 'stocks', valuedicmonth)
+    trend_data = basis.montharray(topic, 'stocks', basis.valuedicmonth)
     res.append(sentiment_data)
     res.append(trend_data)
     return jsonify(res)
