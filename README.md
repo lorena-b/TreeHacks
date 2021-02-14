@@ -25,3 +25,6 @@ We learned that front-end design is an entire world on its own, and it should no
 We will need to create a user-friendly front-end, so the program is accessible for the average individual.
 Furthermore, we would need to find a way to cut down on our program's processing times. It takes about five seconds for the program to calculate the results, which is inconvenient for the user.
 Lastly, we need to find an online webserver to host our program so the community can use it. 
+
+### Demo:
+![til](./images/demogif.gif)
