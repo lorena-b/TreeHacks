@@ -1,4 +1,4 @@
-# TreeHacks
+# Reddit Analysis
 [TreeHacks 2021]
  
  ## Inspiration
