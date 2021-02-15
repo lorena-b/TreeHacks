@@ -10,7 +10,7 @@ We wanted to explore different social media APIs, so we decided to use the Reddi
 The program asks the user to input a specific topic or keyword. It then searches through about 1,000 Reddit posts with that corresponding keyword. It then outputs the market popularity of that topic. It also outputs consumer sentiment towards that topic, from negative to positive expressed as a percentage.  
 
 ## How we built it
-We used the Flask Reddit API to connect the front-end user input to the back-end algorithm. At the back-end, we used the Flask API to obtain relevant Reddit data. We used the Python API in the process. We also incorporated the Python, HTML, and CSS coding languages into our solution.
+We used Flask to establish a back-end server and API to receive user input then use our processing algorithms to return the relevant data. The PRAW reddit API wrapper for python allowed us to retrieve post data from reddit. 
 
 ## Challenges we ran into
 Our most significant difficulty was navigating the discontinuity between the font and the back end. We had trouble connecting the two codes, and that obstacle almost ended our project. Luckily, we ended up using the Flask API, which solved this problem.
