@@ -1,5 +1,6 @@
 # Reddit Analysis
 [TreeHacks 2021]
+ https://devpost.com/software/reddit-analysis?ref_content=user-portfolio&ref_feature=in_progress
  
  ## Inspiration
 After the recent Gamestop GME stock situation, we were inspired to create a software algorithm that helps consumers and businesses detect grassroots market trends through analyzing Reddit posts. 
